@@ -1,0 +1,14 @@
+@import "./navbar.css";
+@import "./glass.css";
+@import "./cinema.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}

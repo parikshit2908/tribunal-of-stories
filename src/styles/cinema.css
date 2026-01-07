@@ -1,0 +1,139 @@
+.act {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.act-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.act p {
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+  font-size: 16px;
+  opacity: 0.92;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === CINEMATIC CONTROLS === */
+
+.controls {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  z-index: 20;
+}
+
+.controls button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 12px 32px;
+  color: #f1f1f1;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: 
+    background 0.4s ease,
+    border 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* === SKIP INTRO BUTTON === */
+
+.skip-intro {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 10px 24px;
+  color: #e6e6e6;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: 
+    background 0.4s ease,
+    border 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.skip-intro:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.skip-intro:active {
+  transform: translateY(0);
+}
+
+/* FINAL OVERRIDE — REMOVE ALL TEXT BACKPLATES COMPLETELY */
+.act p,
+.act span,
+.act div {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+/* remove inherited glass effect globally during cinema */
+body.cinema-mode .glass,
+body.cinema-mode .portfolio-section,
+body.cinema-mode nav,
+body.cinema-mode footer {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
